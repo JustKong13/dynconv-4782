@@ -1,0 +1,7 @@
+Model Type,Input Parameters,GMACs ,Accuracy
+DynConv,"(3, 175, 200)",5.32,0.212
+DynConv,"(3,180, 256)",6.91,0.219
+DynConv,"(3, 256, 256)",9.44,0.238
+ResNet,"(3, 175, 200)",5.31,0.203
+ResNet,"(3, 256, 300)",6.45,0.228
+ResNet,"(3, 250, 450)",9.7,0.229
