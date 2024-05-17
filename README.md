@@ -20,7 +20,7 @@ For our reimplementation, we utilized the same dataset they did - the Food101 da
 
 For evaluation metrics, we kept track of the training loss at each batch, the loss at each epoch, the validation loss at each epoch, and the accuracy for each epoch. We also tracked the computational complexity of the model depending on the model inputs we would include for GMACs measurements. To measure this, we utilized the library “ptflops,” which is an open-source Python library to count FLOPs and GMACs in neural networks. Thus, we adjusted the inputs such that we could measure our model at different input sizes and get the complexity at different GMACs. This is different from their implementation, since they created specific environments for this type of testing and had code to control threading and such to control the budget.
 
-In terms of modifications, we had to adjust the way we trained the dataset, evaluating the model, and setting up the model due to computational constraints. This is discussed in depth in the analysis, as a part of the discrepancies of the implementation.
+In terms of modifications, we had to adjust the way we trained the dataset, evaluating the model, and setting up the model due to computational constraints. This is discussed in depth in the analysis, as a part of the discrepancies of the implementation here: [Challenges, Discrepancies, Analysis](#challenges-discrepancies-analysis).
 
 To run this code, there needs to be a GPU. In addition, to include the evaluation metrics, we included the command `!pip install ptflops` to import the ptflops library, which will be tracking the GMACs of the model.
 
@@ -40,7 +40,7 @@ Based on the results, we can observe that there is a slight increase in accuracy
 
 In addition, we can see that the DynConv implementation actually starts with exceeding the accuracy of ResNet at a lower GMAC of 5.32. Then, ResNet overtakes it in terms of accuracy until around 8.3 GMACs, before DynConv takes over again. This could be due to the model overfitting at a certain point, before it begins learning again.
 
-There are discrepancies in our results compared to the model - especially in terms of the accuracy rates that they were receiving. We address these discrepancies later in this report in the section on Challenges, Discrepancies, Analysis.
+There are discrepancies in our results compared to the model - especially in terms of the accuracy rates that they were receiving. We address these discrepancies later in this report in the section on [Challenges, Discrepancies, Analysis](#challenges-discrepancies-analysis).
 
 For more specific result details, please reference [Results](results/raw_results.csv) to see the specific numbers and correlated parameters.
 
